@@ -1,0 +1,25 @@
+{
+	"name": "somehow-digital/imgproxy",
+	"type": "library",
+	"license": "MIT",
+	"scripts": {
+		"test": "vendor/bin/pest"
+	},
+	"autoload": {
+		"psr-4": {
+			"SomehowDigital\\ImgProxy\\": "src/"
+		}
+	},
+	"require": {
+		"ext-openssl": "*"
+	},
+	"require-dev": {
+		"pestphp/pest": "^3.8",
+		"mockery/mockery": "^1.6"
+	},
+	"config": {
+		"allow-plugins": {
+			"pestphp/pest-plugin": true
+		}
+	}
+}
