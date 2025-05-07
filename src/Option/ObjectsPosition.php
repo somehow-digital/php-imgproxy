@@ -9,10 +9,12 @@ class ObjectsPosition extends OptionAbstract {
 	protected const ALIAS = 'op';
 
 	public function __construct(
-		ObjectsPositionTypeEnum $type,
+		ObjectsPositionTypeEnum | string $type,
 		?float $horizontal = null,
 		?float $vertical = null,
 	) {
+		$type = is_string($type) ? ObjectsPositionTypeEnum::from($type) : $type;
+
 		$this->setValues([$type, $horizontal, $vertical]);
 	}
 }

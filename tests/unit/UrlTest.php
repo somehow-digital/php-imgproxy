@@ -202,4 +202,20 @@ describe('Url', function () {
 
 		expect($url->build())->toBe($result);
 	});
+
+	it('throws exception for unsupported format', function () {
+		$source = 'https://localhost/image.jpg';
+
+		$url = new Url();
+
+		$url = $url->source($source);
+
+		$url = $url->options(
+			$this->width,
+			$this->height,
+			$this->enlarge,
+		);
+
+		expect(fn () => $url->build('exe'))->toThrow(ValueError::class);
+	});
 });

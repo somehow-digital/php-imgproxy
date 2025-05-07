@@ -10,11 +10,13 @@ class Watermark extends OptionAbstract {
 
 	public function __construct(
 		float $opacity,
-		?WatermarkPositionEnum $position = null,
+		WatermarkPositionEnum | string | null $position = null,
 		?float $horizontal = null,
 		?float $vertical = null,
 		?float $scale = null,
 	) {
+		$position = is_string($position) ? WatermarkPositionEnum::from($position) : $position;
+
 		$this->setValues([$opacity, $position, $horizontal, $vertical, $scale]);
 	}
 }

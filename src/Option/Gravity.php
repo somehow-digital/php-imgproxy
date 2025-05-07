@@ -9,10 +9,12 @@ class Gravity extends OptionAbstract {
 	protected const ALIAS = 'g';
 
 	public function __construct(
-		GravityEnum $gravity,
+		GravityEnum | string $gravity,
 		?float $horizontal = null,
 		?float $vertical = null,
 	) {
+		$gravity = is_string($gravity) ? GravityEnum::from($gravity) : $gravity;
+
 		$this->setValues([$gravity, $horizontal, $vertical]);
 	}
 }

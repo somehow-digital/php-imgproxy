@@ -9,8 +9,10 @@ class ResizingAlgorithm extends OptionAbstract {
 	protected const ALIAS = 'ra';
 
 	public function __construct(
-		ResizingAlgorithmEnum $algorithm,
+		ResizingAlgorithmEnum | string $algorithm,
 	) {
+		$algorithm = is_string($algorithm) ? ResizingAlgorithmEnum::from($algorithm) : $algorithm;
+
 		$this->setValues([$algorithm]);
 	}
 }

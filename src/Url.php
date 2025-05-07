@@ -44,8 +44,10 @@ class Url {
 		);
 	}
 
-	public function build(?FormatEnum $format = null): string
+	public function build(FormatEnum | string | null $format = null): string
 	{
+		$format = is_string($format) ? FormatEnum::from($format) : $format;
+
 		$path = $this->buildPath($this->source, $format);
 		$signature = $this->signer?->sign($path) ?: self::SIGNATURE_PLACEHOLDER;
 
@@ -55,7 +57,7 @@ class Url {
 		]);
 	}
 
-	private function buildPath(string $source, ?FormatEnum $format): string {
+	private function buildPath(string $source, ?FormatEnum $format = null): string {
 		$url = $this->buildSource($source, $format);
 		$options = $this->buildOptions();
 		$prefix = $this->masker?->getPathPrefix() ?: self::MASK_PREFIX;
@@ -67,13 +69,13 @@ class Url {
 		]));
 	}
 
-	private function buildSource(string $source, ?FormatEnum $format): string {
+	private function buildSource(string $source, ?FormatEnum $format = null): string {
 		$source = $this->masker?->mask($source) ?: rawurlencode($source);
 		$separator = $this->masker?->getFormatSeparator() ?: self::FORMAT_SEPARATOR;
 
 		return implode($separator, array_filter([
 			$source,
-			$format?->value,
+			$format?->value ?: $format,
 		]));
 	}
 

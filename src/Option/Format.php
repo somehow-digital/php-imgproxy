@@ -9,8 +9,10 @@ class Format extends OptionAbstract {
 	protected const ALIAS = 'f';
 
 	public function __construct(
-		FormatEnum $format,
+		FormatEnum | string $format,
 	) {
+		$format = is_string($format) ? FormatEnum::from($format) : $format;
+
 		$this->setValues([$format]);
 	}
 }

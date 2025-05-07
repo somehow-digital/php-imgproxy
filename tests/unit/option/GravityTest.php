@@ -6,10 +6,20 @@ use SomehowDigital\ImgProxy\Option\Gravity;
 use SomehowDigital\ImgProxy\Option\GravityEnum;
 
 describe('Gravity', function () {
-	it('handles basic option', function () {
+	it('handles enum value', function () {
 		$value = GravityEnum::NORTH;
 
 		$option = new Gravity($value);
+
+		expect($option->getName())->toBeString();
+		expect($option->getAlias())->toBeString();
+		expect($option->getValues())->toBe([$value]);
+	});
+
+	it('handles string value', function () {
+		$value = GravityEnum::NORTH;
+
+		$option = new Gravity($value->value);
 
 		expect($option->getName())->toBeString();
 		expect($option->getAlias())->toBeString();
