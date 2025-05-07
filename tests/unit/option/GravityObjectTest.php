@@ -8,12 +8,13 @@ use SomehowDigital\ImgProxy\Option\GravityObject;
 describe('GravityObject', function () {
 	it('handles basic option', function () {
 		$values = [GravityEnum::OBJECT, 'face', 'tree', 'car'];
-		$parameters = array_slice($values, 1);
+		$parameters = ['obj', 'face', 'tree', 'car'];
 
-		$option = new GravityObject(...$parameters);
+		$option = new GravityObject(...array_slice($values, 1));
 
 		expect($option->getName())->toBeString();
 		expect($option->getAlias())->toBeString();
 		expect($option->getValues())->toBe($values);
+		expect($option->getParameters())->toBe($parameters);
 	});
 });

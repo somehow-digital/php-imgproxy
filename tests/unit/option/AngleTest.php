@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Rotate;
 
-describe('Rotate', function () {
-	it('returns valid values', function () {
+describe('Angle', function () {
+	it('handles basic option', function () {
 		$value = 90;
 		$parameter = '90';
 

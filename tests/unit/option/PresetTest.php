@@ -13,5 +13,6 @@ describe('Preset', function () {
 		expect($option->getName())->toBeString();
 		expect($option->getAlias())->toBeString();
 		expect($option->getValues())->toBe($values);
+		expect($option->getParameters())->toBe($values);
 	});
 });
