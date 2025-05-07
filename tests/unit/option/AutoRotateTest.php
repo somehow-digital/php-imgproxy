@@ -14,5 +14,6 @@ describe('AutoRotate', function () {
 		expect($option->getName())->toBeString();
 		expect($option->getAlias())->toBeString();
 		expect($option->getValues())->toBe([$value]);
+		expect($option->getParameters())->toBe([$parameter]);
 	});
 });

@@ -8,12 +8,13 @@ use SomehowDigital\ImgProxy\Option\GravityFocusPoint;
 describe('GravityFocusPoint', function () {
 	it('handles basic option', function () {
 		$values = [GravityEnum::FOCUS_POINT, 0.563, 0.122];
-		$parameters = array_slice($values, 1);
+		$parameters = ['fp', '0.563', '0.122'];
 
-		$option = new GravityFocusPoint(...$parameters);
+		$option = new GravityFocusPoint(...array_slice($values, 1));
 
 		expect($option->getName())->toBeString();
 		expect($option->getAlias())->toBeString();
 		expect($option->getValues())->toBe($values);
+		expect($option->getParameters())->toBe($parameters);
 	});
 });

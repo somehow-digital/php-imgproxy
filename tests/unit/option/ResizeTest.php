@@ -11,7 +11,7 @@ use SomehowDigital\ImgProxy\Option\ResizingTypeEnum;
 use SomehowDigital\ImgProxy\Option\Width;
 
 describe('Resize', function () {
-	it('returns valid values', function () {
+	it('handles basic option', function () {
 		$values = [
 			new ResizingType(ResizingTypeEnum::FIT),
 			new Width(100),

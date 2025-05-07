@@ -9,7 +9,7 @@ use SomehowDigital\ImgProxy\Option\Size;
 use SomehowDigital\ImgProxy\Option\Width;
 
 describe('Size', function () {
-	it('returns valid values', function () {
+	it('handles basic option', function () {
 		$values = [
 			new Width(100),
 			new Height(100),

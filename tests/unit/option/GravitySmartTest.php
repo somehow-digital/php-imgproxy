@@ -8,11 +8,13 @@ use SomehowDigital\ImgProxy\Option\GravitySmart;
 describe('GravitySmart', function () {
 	it('handles basic option', function () {
 		$value = GravityEnum::SMART;
+		$parameter = 'sm';
 
 		$option = new GravitySmart();
 
 		expect($option->getName())->toBeString();
 		expect($option->getAlias())->toBeString();
 		expect($option->getValues())->toBe([$value]);
+		expect($option->getParameters())->toBe([$parameter]);
 	});
 });
