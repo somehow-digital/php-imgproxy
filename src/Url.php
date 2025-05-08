@@ -60,7 +60,7 @@ class Url {
 	private function buildPath(string $source, ?FormatEnum $format = null): string {
 		$url = $this->buildSource($source, $format);
 		$options = $this->buildOptions();
-		$prefix = $this->masker?->getPathPrefix() ?: self::MASK_PREFIX;
+		$prefix = $this->masker?->getPathPrefix() ?? self::MASK_PREFIX;
 
 		return implode(self::PATH_SEPARATOR, array_filter([
 			$options,
