@@ -8,11 +8,12 @@ use SomehowDigital\ImgProxy\Utility\Url;
 
 class EncodingMasker implements MaskerInterface
 {
+	private const PATH_PREFIX = '';
 	private const FORMAT_SEPARATOR = '.';
 
 	public function getPathPrefix(): ?string
 	{
-		return null;
+		return self::PATH_PREFIX;
 	}
 
 	public function getFormatSeparator(): ?string
