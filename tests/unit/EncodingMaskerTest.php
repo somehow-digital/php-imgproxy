@@ -19,7 +19,7 @@ describe('EncodingMasker', function () {
 		$encoder = new EncodingMasker();
 		$prefix = $encoder->getPathPrefix();
 
-		expect($prefix)->toBeNull();
+		expect($prefix)->toBeEmpty();
 	});
 
 	it('returns format prefix', function ()  {
