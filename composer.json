@@ -14,7 +14,7 @@
 		"ext-openssl": "*"
 	},
 	"require-dev": {
-		"pestphp/pest": "^3.8",
+		"pestphp/pest": "^4.0",
 		"mockery/mockery": "^1.6"
 	},
 	"config": {
