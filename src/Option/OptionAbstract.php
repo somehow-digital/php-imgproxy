@@ -59,6 +59,10 @@ abstract class OptionAbstract implements OptionInterface
 	 */
 	protected function setValues(array $values): void
 	{
-		$this->values = array_filter($values, fn(mixed $value): bool => $value !== null && $value !== '');
+		while ($values !== [] && ($values[array_key_last($values)] === null || $values[array_key_last($values)] === '')) {
+			array_pop($values);
+		}
+
+		$this->values = $values;
 	}
 }
