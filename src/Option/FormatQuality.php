@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
+use InvalidArgumentException;
+
 class FormatQuality extends OptionAbstract
 {
 	protected const NAME = 'format_quality';
@@ -16,6 +18,10 @@ class FormatQuality extends OptionAbstract
 	public function __construct(
 		array $qualities,
 	) {
+		if ($qualities === []) {
+			throw new InvalidArgumentException('Parameter `qualities` must not be empty.');
+		}
+
 		$values = [];
 
 		foreach ($qualities as $format => $quality) {

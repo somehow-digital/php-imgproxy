@@ -36,4 +36,10 @@ describe('Gradient', function (): void {
 		expect($option->getAlias())->toBeString();
 		expect($option->getParameters())->toBe(['0.5', 'ff0000', 'up', '0.2', '0.8']);
 	});
+
+	it('keeps a skipped color in place', function (): void {
+		$option = new Gradient(0.5, null, 45);
+
+		expect($option->getParameters())->toBe(['0.5', '', '45']);
+	});
 });

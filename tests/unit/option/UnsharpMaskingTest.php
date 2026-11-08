@@ -28,4 +28,10 @@ describe('UnsharpMasking', function (): void {
 		expect($option->getAlias())->toBeString();
 		expect($option->getParameters())->toBe(['always', '0.5', '2']);
 	});
+
+	it('keeps a skipped mode in place', function (): void {
+		$option = new UnsharpMasking(null, 0.5);
+
+		expect($option->getParameters())->toBe(['', '0.5']);
+	});
 });

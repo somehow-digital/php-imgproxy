@@ -5,12 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\FormatQuality;
 
 describe('FormatQuality', function (): void {
-	it('handles basic option', function (): void {
-		$option = new FormatQuality([]);
-
-		expect($option->getName())->toBeString();
-		expect($option->getAlias())->toBeString();
-		expect($option->getParameters())->toBe([]);
+	it('rejects empty qualities', function (): void {
+		expect(fn(): FormatQuality => new FormatQuality([]))->toThrow(InvalidArgumentException::class);
 	});
 
 	it('handles qualities', function (): void {
