@@ -133,6 +133,19 @@ describe('Url', function (): void {
 		expect($url->build())->toBe($result);
 	});
 
+	it('signs the path including the leading slash', function (): void {
+		$signer = new class() implements SignerInterface {
+			public function sign(string $value): string
+			{
+				return $value;
+			}
+		};
+
+		$url = (new Url(null, $signer))->source('https://localhost/image.jpg')->options($this->width);
+
+		expect($url->build())->toBe('/w:100/plain/https%3A%2F%2Flocalhost%2Fimage.jpg/w:100/plain/https%3A%2F%2Flocalhost%2Fimage.jpg');
+	});
+
 	it('builds signed URL with masked source', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = 'signature/w:100/h:100/el:1/prefix/masked';
