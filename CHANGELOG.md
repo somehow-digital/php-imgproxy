@@ -24,6 +24,7 @@
 - `HashsumTypeEnum::SHA256` replaces the misspelled `HashsumTypeEnum::SHA2566`, which remains as a deprecated alias.
 - `Crop` accepts relative sizes (below 1) by taking its width and height as floats.
 - Skipped optional arguments no longer shift the following arguments of an option, e.g. `Resize` without a type or `Trim` without a color. Only trailing empty arguments are left out.
+- `Rotate` rejects negative angles, which imgproxy answers with a server error.
 - `Url` signs the path including its leading slash, as imgproxy expects.
 
 ## [1.0.0] - 2026-02-20

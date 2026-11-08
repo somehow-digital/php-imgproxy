@@ -14,8 +14,8 @@ class Rotate extends OptionAbstract
 	public function __construct(
 		int $angle,
 	) {
-		if ($angle % 90 !== 0) {
-			throw new InvalidArgumentException('Parameter `angle` must be a multiple of 90.');
+		if ($angle % 90 !== 0 || abs($angle) !== $angle) {
+			throw new InvalidArgumentException('Parameter `angle` must be a non-negative multiple of 90.');
 		}
 
 		$this->setValues([$angle]);
