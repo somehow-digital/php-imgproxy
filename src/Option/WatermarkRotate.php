@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class WatermarkRotate extends OptionAbstract {
+class WatermarkRotate extends OptionAbstract
+{
 	protected const NAME = 'watermark_rotate';
 	protected const ALIAS = 'wmr';
 

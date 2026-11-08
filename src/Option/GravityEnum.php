@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-enum GravityEnum: string {
+enum GravityEnum: string
+{
 	case NORTH = 'no';
 	case EAST = 'ea';
 	case SOUTH = 'so';

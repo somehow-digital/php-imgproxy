@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\StripColorProfile;
 
-describe('StripColorProfile', function () {
-	it('handles default option', function () {
+describe('StripColorProfile', function (): void {
+	it('handles default option', function (): void {
 		$value = true;
 		$parameter = '1';
 
@@ -17,7 +17,7 @@ describe('StripColorProfile', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles explicit true option', function () {
+	it('handles explicit true option', function (): void {
 		$value = true;
 		$parameter = '1';
 
@@ -29,7 +29,7 @@ describe('StripColorProfile', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles explicit false option', function () {
+	it('handles explicit false option', function (): void {
 		$value = false;
 		$parameter = '0';
 

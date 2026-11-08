@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Padding;
 
-describe('Padding', function () {
-	it('handles single option', function () {
-		$values =  [4];
+describe('Padding', function (): void {
+	it('handles single option', function (): void {
+		$values = [4];
 		$parameters = ['4'];
 
 		$option = new Padding(...$values);
@@ -17,8 +17,8 @@ describe('Padding', function () {
 		expect($option->getParameters())->toBe($parameters);
 	});
 
-	it('handles all options', function () {
-		$values =  [4, 1, 2, 5];
+	it('handles all options', function (): void {
+		$values = [4, 1, 2, 5];
 		$parameters = ['4', '1', '2', '5'];
 
 		$option = new Padding(...$values);

@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class Monochrome extends OptionAbstract {
+class Monochrome extends OptionAbstract
+{
 	protected const NAME = 'monochrome';
 	protected const ALIAS = 'mc';
 

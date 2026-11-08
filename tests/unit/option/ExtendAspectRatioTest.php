@@ -6,8 +6,8 @@ use SomehowDigital\ImgProxy\Option\ExtendAspectRatio;
 use SomehowDigital\ImgProxy\Option\Gravity;
 use SomehowDigital\ImgProxy\Option\GravityEnum;
 
-describe('ExtendAspectRatio', function () {
-	it('handles basic options', function () {
+describe('ExtendAspectRatio', function (): void {
+	it('handles basic options', function (): void {
 		$value = true;
 		$parameter = '1';
 
@@ -19,7 +19,7 @@ describe('ExtendAspectRatio', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles gravity option', function () {
+	it('handles gravity option', function (): void {
 		$values = [true, new Gravity(GravityEnum::WEST)];
 
 		$parameters = [

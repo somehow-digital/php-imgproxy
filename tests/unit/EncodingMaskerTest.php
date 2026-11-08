@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Masker\EncodingMasker;
 
-describe('EncodingMasker', function () {
-	it('encodes', function ()  {
+describe('EncodingMasker', function (): void {
+	it('encodes', function (): void {
 		$value = 'test';
 		$result = 'dGVzdA';
 
@@ -15,14 +15,14 @@ describe('EncodingMasker', function () {
 		expect($value)->toBe($result);
 	});
 
-	it('returns path prefix', function ()  {
+	it('returns path prefix', function (): void {
 		$encoder = new EncodingMasker();
 		$prefix = $encoder->getPathPrefix();
 
 		expect($prefix)->toBeEmpty();
 	});
 
-	it('returns format prefix', function ()  {
+	it('returns format prefix', function (): void {
 		$encoder = new EncodingMasker();
 		$prefix = $encoder->getFormatSeparator();
 

@@ -11,12 +11,12 @@ class EncodingMasker implements MaskerInterface
 	private const PATH_PREFIX = '';
 	private const FORMAT_SEPARATOR = '.';
 
-	public function getPathPrefix(): ?string
+	public function getPathPrefix(): string
 	{
 		return self::PATH_PREFIX;
 	}
 
-	public function getFormatSeparator(): ?string
+	public function getFormatSeparator(): string
 	{
 		return self::FORMAT_SEPARATOR;
 	}

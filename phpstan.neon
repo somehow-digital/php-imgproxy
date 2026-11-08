@@ -1,0 +1,74 @@
+includes:
+	- vendor/phpstan/phpstan/conf/bleedingEdge.neon
+	- vendor/pestphp/pest/extension.neon
+	- vendor/phpstan/phpstan-strict-rules/rules.neon
+	- vendor/phpstan/phpstan-deprecation-rules/rules.neon
+	- vendor/shipmonk/phpstan-rules/rules.neon
+	- vendor/tomasvotruba/cognitive-complexity/config/extension.neon
+
+parameters:
+	level: 10
+	# The supported PHP range, not just the running version.
+	phpVersion:
+		min: 80200
+		max: 80599
+	reportUnmatchedIgnoredErrors: true
+	checkUninitializedProperties: true
+	checkTooWideReturnTypesInProtectedAndPublicMethods: true
+	ignoreErrors:
+		# Pest marks the classes behind its functions as internal.
+		-
+			identifier: method.internalClass
+			message: '#internal class Pest\\#'
+			path: tests
+		# Pest shares state between hooks and tests through `$this`.
+		-
+			identifier: property.notFound
+			path: tests
+		-
+			identifier: argument.type
+			message: '#, (mixed|array\{mixed.*\}|array<int, mixed>) given\.$#'
+			path: tests
+		# The gravity variants map their own arguments onto the values instead of the parent's.
+		-
+			identifier: constructor.missingParentCall
+			path: src/Option
+	paths:
+		- src
+		- tests
+	shipmonkRules:
+		# Thrown from Pest closures and callbacks throughout.
+		forbidCheckedExceptionInCallable:
+			enabled: false
+		# Debugging, insecure calls, and what a URL builder never needs.
+		forbidCustomFunctions:
+			list:
+				'debug_backtrace': 'Remove the debugging.'
+				'debug_print_backtrace': 'Remove the debugging.'
+				'debug_zval_dump': 'Remove the debugging.'
+				'dd': 'Remove the debugging.'
+				'dump': 'Remove the debugging.'
+				'phpinfo': 'Remove the debugging.'
+				'print_r': 'Remove the debugging.'
+				'ray': 'Remove the debugging.'
+				'var_dump': 'Remove the debugging.'
+				'var_export': 'Remove the debugging.'
+				'xdebug_break': 'Remove the debugging.'
+				'xdebug_var_dump': 'Remove the debugging.'
+				'array_rand': 'It is not cryptographically secure, so use random_int().'
+				'mt_rand': 'It is not cryptographically secure, so use random_int().'
+				'rand': 'It is not cryptographically secure, so use random_int().'
+				'shuffle': 'It is not cryptographically secure, so use random_int().'
+				'str_shuffle': 'It is not cryptographically secure, so use random_int().'
+				'uniqid': 'It is predictable, so use random_bytes().'
+				'md5': 'It is broken, so use hash() with a secure algorithm.'
+				'sha1': 'It is broken, so use hash() with a secure algorithm.'
+				'unserialize': 'It can create any object, so decode JSON.'
+				'extract': 'It creates variables out of data.'
+				'mb_parse_str': 'It creates variables out of data.'
+				'exec': 'The library runs no commands.'
+				'passthru': 'The library runs no commands.'
+				'proc_open': 'The library runs no commands.'
+				'shell_exec': 'The library runs no commands.'
+				'system': 'The library runs no commands.'
+				'error_log': 'The library does not log.'

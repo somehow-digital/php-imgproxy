@@ -6,8 +6,8 @@ use SomehowDigital\ImgProxy\Option\Crop;
 use SomehowDigital\ImgProxy\Option\Gravity;
 use SomehowDigital\ImgProxy\Option\GravityEnum;
 
-describe('Crop', function () {
-	it('handles basic options', function () {
+describe('Crop', function (): void {
+	it('handles basic options', function (): void {
 		$values = [100, 100];
 		$parameters = ['100', '100'];
 
@@ -19,7 +19,7 @@ describe('Crop', function () {
 		expect($option->getParameters())->toBe($parameters);
 	});
 
-	it('handles gravity option', function () {
+	it('handles gravity option', function (): void {
 		$values = [100, 100, new Gravity(GravityEnum::CENTER)];
 		$parameters = ['100', '100', 'ce'];
 

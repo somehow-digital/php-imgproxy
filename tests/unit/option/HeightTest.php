@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Height;
 
-describe('Height', function () {
-	it('handles basic option', function () {
+describe('Height', function (): void {
+	it('handles basic option', function (): void {
 		$value = 12345;
 		$parameter = '12345';
 

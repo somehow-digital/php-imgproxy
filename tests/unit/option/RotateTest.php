@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Rotate;
 
-describe('Rotate', function () {
-	it('handles basic option', function () {
+describe('Rotate', function (): void {
+	it('handles basic option', function (): void {
 		$value = 90;
 		$parameter = '90';
 		$option = new Rotate($value);
@@ -16,7 +16,7 @@ describe('Rotate', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('throws on invalid angle', function () {
-		expect(fn () => new Rotate(45))->toThrow(InvalidArgumentException::class);
+	it('throws on invalid angle', function (): void {
+		expect(fn(): Rotate => new Rotate(45))->toThrow(InvalidArgumentException::class);
 	});
 });

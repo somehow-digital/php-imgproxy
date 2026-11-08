@@ -5,8 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\ObjectsPosition;
 use SomehowDigital\ImgProxy\Option\ObjectsPositionTypeEnum;
 
-describe('ObjectsPosition', function () {
-	it('handles enum value', function () {
+describe('ObjectsPosition', function (): void {
+	it('handles enum value', function (): void {
 		$value = ObjectsPositionTypeEnum::NORTH;
 		$parameter = 'no';
 
@@ -18,7 +18,7 @@ describe('ObjectsPosition', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles string value', function () {
+	it('handles string value', function (): void {
 		$value = ObjectsPositionTypeEnum::NORTH;
 		$parameter = 'no';
 
@@ -30,7 +30,7 @@ describe('ObjectsPosition', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles offset option', function () {
+	it('handles offset option', function (): void {
 		$values = [ObjectsPositionTypeEnum::SOUTH, 100.0, 100.0];
 		$parameters = ['so', '100', '100'];
 

@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class Size extends OptionAbstract {
+class Size extends OptionAbstract
+{
 	protected const NAME = 'size';
 	protected const ALIAS = 's';
 

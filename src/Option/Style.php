@@ -6,7 +6,8 @@ namespace SomehowDigital\ImgProxy\Option;
 
 use SomehowDigital\ImgProxy\Utility\Url;
 
-class Style extends OptionAbstract {
+class Style extends OptionAbstract
+{
 	protected const NAME = 'style';
 	protected const ALIAS = 'st';
 
@@ -16,8 +17,11 @@ class Style extends OptionAbstract {
 		$this->setValues([$style]);
 	}
 
+	/**
+	 * @return list<string>
+	 */
 	public function getParameters(): array
 	{
-		return array_map([Url::class, 'encode'], parent::getParameters());
+		return array_map(Url::encode(...), parent::getParameters());
 	}
 }

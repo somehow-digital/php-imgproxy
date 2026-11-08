@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\VideoThumbnailKeyframes;
 
-describe('VideoThumbnailKeyframes', function () {
-	it('handles basic option', function () {
+describe('VideoThumbnailKeyframes', function (): void {
+	it('handles basic option', function (): void {
 		$value = true;
 		$parameter = '1';
 

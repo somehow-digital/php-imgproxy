@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Saturation;
 
-describe('Saturation', function () {
-	it('handles basic option', function () {
+describe('Saturation', function (): void {
+	it('handles basic option', function (): void {
 		$value = 2.0;
 		$parameter = '2';
 

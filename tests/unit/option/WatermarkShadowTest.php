@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\WatermarkShadow;
 
-describe('WatermarkShadow', function () {
-	it('handles basic option', function () {
+describe('WatermarkShadow', function (): void {
+	it('handles basic option', function (): void {
 		$value = 10.0;
 		$parameter = '10';
 

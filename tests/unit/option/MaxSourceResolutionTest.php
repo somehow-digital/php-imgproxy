@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\MaxSourceResolution;
 
-describe('MaxSourceResolution', function () {
-	it('handles basic option', function () {
+describe('MaxSourceResolution', function (): void {
+	it('handles basic option', function (): void {
 		$value = 1;
 		$parameter = '1';
 
@@ -17,9 +17,9 @@ describe('MaxSourceResolution', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('throws exception for invalid value', function () {
+	it('throws exception for invalid value', function (): void {
 		$value = 0;
 
-		expect(fn () => new MaxSourceResolution($value))->toThrow(InvalidArgumentException::class);
+		expect(fn(): MaxSourceResolution => new MaxSourceResolution($value))->toThrow(InvalidArgumentException::class);
 	});
 });

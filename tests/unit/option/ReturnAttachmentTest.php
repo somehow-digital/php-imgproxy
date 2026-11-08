@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\ReturnAttachment;
 
-describe('ReturnAttachment', function () {
-	it('handles basic option', function () {
+describe('ReturnAttachment', function (): void {
+	it('handles basic option', function (): void {
 		$value = true;
 		$parameter = '1';
 

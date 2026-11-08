@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Utility\Format;
 
-describe('Format::supports', function () {
-	it('supports standard formats', function () {
+describe('Format::supports', function (): void {
+	it('supports standard formats', function (): void {
 		expect(Format::supports('png'))->toBeTrue();
 		expect(Format::supports('jpg'))->toBeTrue();
 		expect(Format::supports('jpeg'))->toBeTrue();
@@ -21,19 +21,19 @@ describe('Format::supports', function () {
 		expect(Format::supports('jxl'))->toBeTrue();
 	});
 
-	it('does not support pro formats without flag', function () {
+	it('does not support pro formats without flag', function (): void {
 		expect(Format::supports('pdf'))->toBeFalse();
 		expect(Format::supports('psd'))->toBeFalse();
 		expect(Format::supports('mp4'))->toBeFalse();
 	});
 
-	it('supports pro formats with flag', function () {
+	it('supports pro formats with flag', function (): void {
 		expect(Format::supports('pdf', true))->toBeTrue();
 		expect(Format::supports('psd', true))->toBeTrue();
 		expect(Format::supports('mp4', true))->toBeTrue();
 	});
 
-	it('does not support unknown formats', function () {
+	it('does not support unknown formats', function (): void {
 		expect(Format::supports('unknown'))->toBeFalse();
 	});
 });

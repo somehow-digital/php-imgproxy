@@ -5,8 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\Hashsum;
 use SomehowDigital\ImgProxy\Option\HashsumTypeEnum;
 
-describe('Hashsum', function () {
-	it('handles enum value', function () {
+describe('Hashsum', function (): void {
+	it('handles enum value', function (): void {
 		$values = [HashsumTypeEnum::SHA1, 'hashsum'];
 		$parameters = ['sha1', 'hashsum'];
 
@@ -18,7 +18,7 @@ describe('Hashsum', function () {
 		expect($option->getParameters())->toBe($parameters);
 	});
 
-	it('handles string value', function () {
+	it('handles string value', function (): void {
 		$values = [HashsumTypeEnum::SHA1, 'hashsum'];
 		$parameters = ['sha1', 'hashsum'];
 

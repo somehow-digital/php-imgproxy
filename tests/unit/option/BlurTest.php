@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Blur;
 
-describe('Blur', function () {
-	it('handles basic option', function () {
+describe('Blur', function (): void {
+	it('handles basic option', function (): void {
 		$value = 1.5;
 		$parameter = '1.5';
 

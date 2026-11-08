@@ -6,7 +6,8 @@ namespace SomehowDigital\ImgProxy\Option;
 
 use SomehowDigital\ImgProxy\Utility\Url;
 
-class WatermarkText extends OptionAbstract {
+class WatermarkText extends OptionAbstract
+{
 	protected const NAME = 'watermark_text';
 	protected const ALIAS = 'wmt';
 
@@ -16,8 +17,11 @@ class WatermarkText extends OptionAbstract {
 		$this->setValues([$text]);
 	}
 
+	/**
+	 * @return list<string>
+	 */
 	public function getParameters(): array
 	{
-		return array_map([Url::class, 'encode'], parent::getParameters());
+		return array_map(Url::encode(...), parent::getParameters());
 	}
 }

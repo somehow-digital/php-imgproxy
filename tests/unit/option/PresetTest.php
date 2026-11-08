@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Preset;
 
-describe('Preset', function () {
-	it('handles basic option', function () {
+describe('Preset', function (): void {
+	it('handles basic option', function (): void {
 		$values = ['sharpen', 'enlarge'];
 
 		$option = new Preset(...$values);

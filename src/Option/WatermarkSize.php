@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class WatermarkSize extends OptionAbstract {
+class WatermarkSize extends OptionAbstract
+{
 	protected const NAME = 'watermark_size';
 	protected const ALIAS = 'wms';
 

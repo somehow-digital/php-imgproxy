@@ -7,8 +7,8 @@ use SomehowDigital\ImgProxy\Option\Brightness;
 use SomehowDigital\ImgProxy\Option\Contrast;
 use SomehowDigital\ImgProxy\Option\Saturation;
 
-describe('Adjust', function () {
-	it('handles basic option', function () {
+describe('Adjust', function (): void {
+	it('handles basic option', function (): void {
 		$values = [
 			new Brightness(100),
 			new Contrast(100),

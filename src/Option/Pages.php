@@ -6,7 +6,8 @@ namespace SomehowDigital\ImgProxy\Option;
 
 use InvalidArgumentException;
 
-class Pages extends OptionAbstract {
+class Pages extends OptionAbstract
+{
 	protected const NAME = 'pages';
 	protected const ALIAS = 'pgs';
 

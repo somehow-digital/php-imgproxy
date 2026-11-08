@@ -6,7 +6,8 @@ namespace SomehowDigital\ImgProxy\Option;
 
 use InvalidArgumentException;
 
-class VideoThumbnailSecond extends OptionAbstract {
+class VideoThumbnailSecond extends OptionAbstract
+{
 	protected const NAME = 'video_thumbnail_second';
 	protected const ALIAS = 'vts';
 

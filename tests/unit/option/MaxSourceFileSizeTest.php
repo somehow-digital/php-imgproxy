@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\MaxSourceFileSize;
 
-describe('MaxSourceFileSize', function () {
-	it('handles basic option', function () {
+describe('MaxSourceFileSize', function (): void {
+	it('handles basic option', function (): void {
 		$value = 1024;
 		$parameter = '1024';
 
@@ -17,9 +17,13 @@ describe('MaxSourceFileSize', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('throws exception for invalid value', function () {
+	it('throws exception for invalid value', function (): void {
 		$value = -1;
 
-		expect(fn () => new MaxSourceFileSize($value))->toThrow(InvalidArgumentException::class);
+		expect(fn(): MaxSourceFileSize => new MaxSourceFileSize($value))->toThrow(InvalidArgumentException::class);
+	});
+
+	it('accepts zero', function (): void {
+		expect((new MaxSourceFileSize(0))->getValues())->toBe([0]);
 	});
 });

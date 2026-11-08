@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\WatermarkText;
 
-describe('WatermarkText', function () {
-	it('handles basic option', function () {
+describe('WatermarkText', function (): void {
+	it('handles basic option', function (): void {
 		$value = 'watermark';
 		$parameter = 'd2F0ZXJtYXJr';
 

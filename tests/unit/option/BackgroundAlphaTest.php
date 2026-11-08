@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\BackgroundAlpha;
 
-describe('BackgroundAlpha', function () {
-	it('handles basic option', function () {
+describe('BackgroundAlpha', function (): void {
+	it('handles basic option', function (): void {
 		$value = 0.25;
 		$parameter = '0.25';
 

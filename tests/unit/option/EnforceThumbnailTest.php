@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\EnforceThumbnail;
 
-describe('EnforceThumbnail', function () {
-	it('handles basic option', function () {
+describe('EnforceThumbnail', function (): void {
+	it('handles basic option', function (): void {
 		$value = true;
 		$parameter = '1';
 

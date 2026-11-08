@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\KeepCopyright;
 
-describe('KeepCopyright', function () {
-	it('handles basic option', function () {
+describe('KeepCopyright', function (): void {
+	it('handles basic option', function (): void {
 		$value = true;
 		$parameter = '1';
 

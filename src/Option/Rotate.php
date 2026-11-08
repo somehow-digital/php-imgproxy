@@ -6,7 +6,8 @@ namespace SomehowDigital\ImgProxy\Option;
 
 use InvalidArgumentException;
 
-class Rotate extends OptionAbstract {
+class Rotate extends OptionAbstract
+{
 	protected const NAME = 'rotate';
 	protected const ALIAS = 'rot';
 

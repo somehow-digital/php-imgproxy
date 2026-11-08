@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\DisableAnimation;
 
-describe('DisableAnimation', function () {
-	it('handles basic option', function () {
+describe('DisableAnimation', function (): void {
+	it('handles basic option', function (): void {
 		$value = true;
 		$parameter = '1';
 

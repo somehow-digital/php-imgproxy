@@ -11,33 +11,54 @@ abstract class OptionAbstract implements OptionInterface
 	protected const NAME = '';
 	protected const ALIAS = null;
 
-	protected readonly array $values;
+	/** @var array<mixed> */
+	protected array $values = [];
 
-	public function getName(): string {
-		return static::NAME;
+	public function getName(): string
+	{
+		/** @var string $name */
+		$name = static::NAME;
+
+		return $name;
 	}
 
-	public function getAlias(): ?string {
-		return static::ALIAS;
+	public function getAlias(): ?string
+	{
+		/** @var string|null $alias */
+		$alias = static::ALIAS;
+
+		return $alias;
 	}
 
-	public function getValues(): array {
+	/**
+	 * @return array<mixed>
+	 */
+	public function getValues(): array
+	{
 		return $this->values;
 	}
 
+	/**
+	 * @return list<string>
+	 */
 	public function getParameters(): array
 	{
 		$parameters = array_map(
-			fn($value) => is_array($value = Url::transform($value)) ? $value : [$value],
+			fn(mixed $value): array => is_array($value = Url::transform($value)) ? $value : [$value],
 			$this->getValues(),
 		);
 
-		return array_merge(...$parameters);
+		/** @var list<string> $merged */
+		$merged = array_merge(...$parameters);
+
+		return $merged;
 	}
 
-	protected function setValues(array $values): void {
-		$this->values = array_filter($values, function ($value) {
-			return $value !== null && $value !== '';
-		});
+	/**
+	 * @param array<mixed> $values
+	 */
+	protected function setValues(array $values): void
+	{
+		$this->values = array_filter($values, fn(mixed $value): bool => $value !== null && $value !== '');
 	}
 }

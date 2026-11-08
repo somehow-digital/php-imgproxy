@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class Contrast extends OptionAbstract {
+class Contrast extends OptionAbstract
+{
 	protected const NAME = 'contrast';
 	protected const ALIAS = 'co';
 

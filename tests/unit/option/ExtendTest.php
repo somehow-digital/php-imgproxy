@@ -6,8 +6,8 @@ use SomehowDigital\ImgProxy\Option\Extend;
 use SomehowDigital\ImgProxy\Option\Gravity;
 use SomehowDigital\ImgProxy\Option\GravityEnum;
 
-describe('Extend', function () {
-	it('handles basic option', function () {
+describe('Extend', function (): void {
+	it('handles basic option', function (): void {
 		$value = true;
 		$parameter = '1';
 
@@ -19,7 +19,7 @@ describe('Extend', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles gravity option', function () {
+	it('handles gravity option', function (): void {
 		$values = [true, new Gravity(GravityEnum::WEST)];
 		$parameters = ['1', 'we'];
 

@@ -5,8 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\Gravity;
 use SomehowDigital\ImgProxy\Option\GravityEnum;
 
-describe('Gravity', function () {
-	it('handles enum value', function () {
+describe('Gravity', function (): void {
+	it('handles enum value', function (): void {
 		$value = GravityEnum::NORTH;
 		$parameter = 'no';
 
@@ -18,7 +18,7 @@ describe('Gravity', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles string value', function () {
+	it('handles string value', function (): void {
 		$value = GravityEnum::NORTH;
 		$parameter = 'no';
 
@@ -30,7 +30,7 @@ describe('Gravity', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles offset option', function () {
+	it('handles offset option', function (): void {
 		$values = [GravityEnum::SOUTH, 100.0, 100.0];
 		$parameters = ['so', '100', '100'];
 

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Style;
 
-describe('Style', function () {
-	it('handles basic option', function () {
+describe('Style', function (): void {
+	it('handles basic option', function (): void {
 		$value = 'color: red;';
 		$parameter = 'Y29sb3I6IHJlZDs';
 

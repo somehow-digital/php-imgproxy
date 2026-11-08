@@ -8,8 +8,8 @@ use SomehowDigital\ImgProxy\Option\OptionInterface;
 use SomehowDigital\ImgProxy\Signer\SignerInterface;
 use SomehowDigital\ImgProxy\Url;
 
-describe('Url', function () {
-	beforeEach(function () {
+describe('Url', function (): void {
+	beforeEach(function (): void {
 		$this->masker = Mockery::mock(MaskerInterface::class);
 		$this->masker->shouldReceive('mask')->andReturn('masked');
 		$this->masker->shouldReceive('getPathPrefix')->andReturn('prefix');
@@ -35,11 +35,11 @@ describe('Url', function () {
 		$this->crop->shouldReceive('getParameters')->andReturn(['100', '100']);
 	});
 
-	afterEach(function () {
+	afterEach(function (): void {
 		Mockery::close();
 	});
 
-	it('builds basic URL', function () {
+	it('builds basic URL', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = '_/w:100/h:100/el:1/plain/https%3A%2F%2Flocalhost%2Fimage.jpg';
 
@@ -55,7 +55,7 @@ describe('Url', function () {
 		expect($url->build())->toBe($result);
 	});
 
-	it('builds basic URL with custom format', function () {
+	it('builds basic URL with custom format', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = '_/w:100/h:100/el:1/plain/https%3A%2F%2Flocalhost%2Fimage.jpg@png';
 
@@ -71,7 +71,7 @@ describe('Url', function () {
 		expect($url->build(FormatEnum::PNG))->toBe($result);
 	});
 
-	it('builds basic URL with multiple option calls', function () {
+	it('builds basic URL with multiple option calls', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = '_/w:100/h:100/el:1/plain/https%3A%2F%2Flocalhost%2Fimage.jpg';
 
@@ -85,7 +85,7 @@ describe('Url', function () {
 		expect($url->build())->toBe($result);
 	});
 
-	it('builds basic URL with masked source', function () {
+	it('builds basic URL with masked source', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = '_/w:100/h:100/el:1/prefix/masked';
 
@@ -101,7 +101,7 @@ describe('Url', function () {
 		expect($url->build())->toBe($result);
 	});
 
-	it('builds basic URL with masked source and custom format', function () {
+	it('builds basic URL with masked source and custom format', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = '_/w:100/h:100/el:1/prefix/masked.heic';
 
@@ -117,7 +117,7 @@ describe('Url', function () {
 		expect($url->build(FormatEnum::HEIC))->toBe($result);
 	});
 
-	it('builds signed URL', function () {
+	it('builds signed URL', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = 'signature/w:100/h:100/el:1/plain/https%3A%2F%2Flocalhost%2Fimage.jpg';
 
@@ -133,7 +133,7 @@ describe('Url', function () {
 		expect($url->build())->toBe($result);
 	});
 
-	it('builds signed URL with masked source', function () {
+	it('builds signed URL with masked source', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = 'signature/w:100/h:100/el:1/prefix/masked';
 
@@ -149,7 +149,7 @@ describe('Url', function () {
 		expect($url->build())->toBe($result);
 	});
 
-	it('builds basic URL with chained pipelines', function () {
+	it('builds basic URL with chained pipelines', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = '_/c:100:100/-/w:100/h:100/el:1/plain/https%3A%2F%2Flocalhost%2Fimage.jpg';
 
@@ -168,7 +168,7 @@ describe('Url', function () {
 		expect($url->build())->toBe($result);
 	});
 
-	it('builds basic URL with multiple chained pipelines', function () {
+	it('builds basic URL with multiple chained pipelines', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = '_/c:100:100/-/w:100/h:100/el:1/plain/https%3A%2F%2Flocalhost%2Fimage.jpg';
 
@@ -188,7 +188,7 @@ describe('Url', function () {
 		expect($url->build())->toBe($result);
 	});
 
-	it('instantiates with static method', function () {
+	it('instantiates with static method', function (): void {
 		$source = 'https://localhost/image.jpg';
 		$result = '_/w:100/h:100/el:1/plain/https%3A%2F%2Flocalhost%2Fimage.jpg';
 
@@ -203,7 +203,7 @@ describe('Url', function () {
 		expect($url->build())->toBe($result);
 	});
 
-	it('throws exception for unsupported format', function () {
+	it('throws exception for unsupported format', function (): void {
 		$source = 'https://localhost/image.jpg';
 
 		$url = new Url();
@@ -216,6 +216,6 @@ describe('Url', function () {
 			$this->enlarge,
 		);
 
-		expect(fn () => $url->build('exe'))->toThrow(ValueError::class);
+		expect(fn(): string => $url->build('exe'))->toThrow(ValueError::class);
 	});
 });

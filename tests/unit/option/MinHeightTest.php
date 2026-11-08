@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\MinHeight;
 
-describe('MinHeight', function () {
-	it('handles basic option', function () {
+describe('MinHeight', function (): void {
+	it('handles basic option', function (): void {
 		$value = 12345;
 		$parameter = '12345';
 

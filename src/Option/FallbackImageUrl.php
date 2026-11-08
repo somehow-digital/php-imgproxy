@@ -6,7 +6,8 @@ namespace SomehowDigital\ImgProxy\Option;
 
 use SomehowDigital\ImgProxy\Utility\Url;
 
-class FallbackImageUrl extends OptionAbstract {
+class FallbackImageUrl extends OptionAbstract
+{
 	protected const NAME = 'fallback_image_url';
 	protected const ALIAS = 'fiu';
 
@@ -16,8 +17,11 @@ class FallbackImageUrl extends OptionAbstract {
 		$this->setValues([$url]);
 	}
 
+	/**
+	 * @return list<string>
+	 */
 	public function getParameters(): array
 	{
-		return array_map([Url::class, 'encode'], parent::getParameters());
+		return array_map(Url::encode(...), parent::getParameters());
 	}
 }

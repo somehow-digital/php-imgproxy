@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Monochrome;
 
-describe('Monochrome', function () {
-	it('handles basic options', function () {
+describe('Monochrome', function (): void {
+	it('handles basic options', function (): void {
 		$values = [0.25, '000000'];
 		$parameters = ['0.25', '000000'];
 

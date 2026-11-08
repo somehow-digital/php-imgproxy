@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class VideoThumbnailTile extends OptionAbstract {
+class VideoThumbnailTile extends OptionAbstract
+{
 	protected const NAME = 'video_thumbnail_tile';
 	protected const ALIAS = 'vtt';
 

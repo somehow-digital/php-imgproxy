@@ -8,8 +8,8 @@ use SomehowDigital\ImgProxy\Option\Height;
 use SomehowDigital\ImgProxy\Option\Size;
 use SomehowDigital\ImgProxy\Option\Width;
 
-describe('Size', function () {
-	it('handles basic option', function () {
+describe('Size', function (): void {
+	it('handles basic option', function (): void {
 		$values = [
 			new Width(100),
 			new Height(100),
