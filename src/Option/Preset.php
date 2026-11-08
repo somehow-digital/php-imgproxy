@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class Preset extends OptionAbstract {
+class Preset extends OptionAbstract
+{
 	protected const NAME = 'preset';
 	protected const ALIAS = 'pr';
 

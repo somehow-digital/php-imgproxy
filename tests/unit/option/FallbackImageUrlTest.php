@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\FallbackImageUrl;
 
-describe('FallbackImageUrl', function () {
-	it('handles basic option', function () {
+describe('FallbackImageUrl', function (): void {
+	it('handles basic option', function (): void {
 		$value = 'https://localhost/image.jpg';
 		$result = 'aHR0cHM6Ly9sb2NhbGhvc3QvaW1hZ2UuanBn';
 

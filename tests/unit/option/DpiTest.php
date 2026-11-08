@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Dpi;
 
-describe('Dpi', function () {
-	it('handles basic option', function () {
+describe('Dpi', function (): void {
+	it('handles basic option', function (): void {
 		$value = 90;
 		$parameter = '90';
 

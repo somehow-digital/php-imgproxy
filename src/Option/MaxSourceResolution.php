@@ -6,7 +6,8 @@ namespace SomehowDigital\ImgProxy\Option;
 
 use InvalidArgumentException;
 
-class MaxSourceResolution extends OptionAbstract {
+class MaxSourceResolution extends OptionAbstract
+{
 	protected const NAME = 'max_src_resolution';
 	protected const ALIAS = 'msr';
 

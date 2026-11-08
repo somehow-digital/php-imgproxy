@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class ReturnAttachment extends OptionAbstract {
+class ReturnAttachment extends OptionAbstract
+{
 	protected const NAME = 'return_attachment';
 	protected const ALIAS = 'att';
 

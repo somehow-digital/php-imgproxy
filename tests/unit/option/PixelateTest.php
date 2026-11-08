@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Pixelate;
 
-describe('Pixelate', function () {
-	it('handles basic option', function () {
+describe('Pixelate', function (): void {
+	it('handles basic option', function (): void {
 		$value = 8;
 		$parameter = '8';
 

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\VideoThumbnailSecond;
 
-describe('VideoThumbnailSecond', function () {
-	it('handles basic option', function () {
+describe('VideoThumbnailSecond', function (): void {
+	it('handles basic option', function (): void {
 		$value = 0;
 		$parameter = '0';
 
@@ -17,9 +17,9 @@ describe('VideoThumbnailSecond', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('throws exception for invalid value', function () {
+	it('throws exception for invalid value', function (): void {
 		$value = -1;
 
-		expect(fn () => new VideoThumbnailSecond($value))->toThrow(InvalidArgumentException::class);
+		expect(fn(): VideoThumbnailSecond => new VideoThumbnailSecond($value))->toThrow(InvalidArgumentException::class);
 	});
 });

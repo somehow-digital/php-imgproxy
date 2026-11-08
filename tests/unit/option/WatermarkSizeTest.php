@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\WatermarkSize;
 
-describe('WatermarkSize', function () {
-	it('handles basic option', function () {
+describe('WatermarkSize', function (): void {
+	it('handles basic option', function (): void {
 		$values = [100, 100];
 		$parameters = ['100', '100'];
 

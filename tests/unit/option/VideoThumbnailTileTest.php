@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\VideoThumbnailTile;
 
-describe('VideoThumbnailTile', function () {
-	it('handles basic options', function () {
+describe('VideoThumbnailTile', function (): void {
+	it('handles basic options', function (): void {
 		$values = [0, 0, 0, 0, 0];
 		$parameters = ['0', '0', '0', '0', '0'];
 
@@ -17,7 +17,7 @@ describe('VideoThumbnailTile', function () {
 		expect($option->getParameters())->toBe($parameters);
 	});
 
-	it('handles all options', function () {
+	it('handles all options', function (): void {
 		$values = [0, 0, 0, 0, 0, true, true, true, 0.0, 0.0];
 		$parameters = ['0', '0', '0', '0', '0', '1', '1', '1', '0', '0'];
 

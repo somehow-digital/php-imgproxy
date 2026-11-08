@@ -5,8 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\Watermark;
 use SomehowDigital\ImgProxy\Option\WatermarkPositionEnum;
 
-describe('Watermark', function () {
-	it('handles basic option', function () {
+describe('Watermark', function (): void {
+	it('handles basic option', function (): void {
 		$value = 1.0;
 		$parameter = '1';
 
@@ -18,7 +18,7 @@ describe('Watermark', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles position enum value', function () {
+	it('handles position enum value', function (): void {
 		$values = [0.25, WatermarkPositionEnum::CENTER];
 		$parameters = ['0.25', 'ce'];
 
@@ -30,7 +30,7 @@ describe('Watermark', function () {
 		expect($option->getParameters())->toBe($parameters);
 	});
 
-	it('handles position string value', function () {
+	it('handles position string value', function (): void {
 		$values = [0.25, WatermarkPositionEnum::CENTER];
 		$parameters = ['0.25', 'ce'];
 
@@ -42,7 +42,7 @@ describe('Watermark', function () {
 		expect($option->getParameters())->toBe($parameters);
 	});
 
-	it('handles all options', function () {
+	it('handles all options', function (): void {
 		$values = [0.25, WatermarkPositionEnum::CENTER, 0.5, 0.5, 0.5];
 		$parameters = ['0.25', 'ce', '0.5', '0.5', '0.5'];
 

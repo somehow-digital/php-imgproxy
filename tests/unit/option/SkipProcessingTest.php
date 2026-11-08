@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\SkipProcessing;
 
-describe('SkipProcessing', function () {
-	it('handles basic option', function () {
+describe('SkipProcessing', function (): void {
+	it('handles basic option', function (): void {
 		$values = ['jpg', 'png'];
 
 		$option = new SkipProcessing(...$values);

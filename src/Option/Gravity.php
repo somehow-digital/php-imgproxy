@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class Gravity extends OptionAbstract {
+class Gravity extends OptionAbstract
+{
 	protected const NAME = 'gravity';
 	protected const ALIAS = 'g';
 
 	public function __construct(
-		GravityEnum | string $gravity,
+		GravityEnum|string $gravity,
 		?float $horizontal = null,
 		?float $vertical = null,
 	) {

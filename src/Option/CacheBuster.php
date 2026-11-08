@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class CacheBuster extends OptionAbstract {
+class CacheBuster extends OptionAbstract
+{
 	protected const NAME = 'cachebuster';
 	protected const ALIAS = 'cb';
 

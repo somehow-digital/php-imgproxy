@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Pages;
 
-describe('Pages', function () {
-	it('handles basic option', function () {
+describe('Pages', function (): void {
+	it('handles basic option', function (): void {
 		$value = 1;
 		$parameter = '1';
 
@@ -17,9 +17,9 @@ describe('Pages', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('throws exception for invalid value', function () {
+	it('throws exception for invalid value', function (): void {
 		$value = 0;
 
-		expect(fn () => new Pages($value))->toThrow(InvalidArgumentException::class);
+		expect(fn(): Pages => new Pages($value))->toThrow(InvalidArgumentException::class);
 	});
 });

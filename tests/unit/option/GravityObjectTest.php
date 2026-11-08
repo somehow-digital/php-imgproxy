@@ -5,8 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\GravityEnum;
 use SomehowDigital\ImgProxy\Option\GravityObject;
 
-describe('GravityObject', function () {
-	it('handles basic option', function () {
+describe('GravityObject', function (): void {
+	it('handles basic option', function (): void {
 		$values = [GravityEnum::OBJECT, 'face', 'tree', 'car'];
 		$parameters = ['obj', 'face', 'tree', 'car'];
 

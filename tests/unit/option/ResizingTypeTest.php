@@ -5,8 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\ResizingType;
 use SomehowDigital\ImgProxy\Option\ResizingTypeEnum;
 
-describe('ResizingType', function () {
-	it('handles basic option', function () {
+describe('ResizingType', function (): void {
+	it('handles basic option', function (): void {
 		$value = ResizingTypeEnum::FIT;
 		$parameter = $value->value;
 

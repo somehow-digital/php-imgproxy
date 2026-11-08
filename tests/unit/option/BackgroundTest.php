@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Background;
 
-describe('Background', function () {
-	it('handles RGB color', function () {
+describe('Background', function (): void {
+	it('handles RGB color', function (): void {
 		$values = [100, 0, 255];
 		$parameters = ['100', '0', '255'];
 
@@ -17,7 +17,7 @@ describe('Background', function () {
 		expect($option->getParameters())->toBe($parameters);
 	});
 
-	it('handles HEX color', function () {
+	it('handles HEX color', function (): void {
 		$value = 'ff0000';
 		$parameter = 'ff0000';
 

@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-enum FormatEnum: string {
+enum FormatEnum: string
+{
 	case PNG = 'png';
 	case JPG = 'jpg';
 	case JXL = 'jxl';

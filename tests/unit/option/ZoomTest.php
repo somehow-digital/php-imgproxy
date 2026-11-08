@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Zoom;
 
-describe('Zoom', function () {
-	it('handles basic option', function () {
+describe('Zoom', function (): void {
+	it('handles basic option', function (): void {
 		$values = [2.0, 4.0];
 		$parameters = ['2', '4'];
 
@@ -17,7 +17,7 @@ describe('Zoom', function () {
 		expect($option->getParameters())->toBe($parameters);
 	});
 
-	it('accepts single factor', function () {
+	it('accepts single factor', function (): void {
 		$value = 2.0;
 		$parameter = '2';
 

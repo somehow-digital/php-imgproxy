@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class DisableAnimation extends OptionAbstract {
+class DisableAnimation extends OptionAbstract
+{
 	protected const NAME = 'disable_animation';
 	protected const ALIAS = 'da';
 

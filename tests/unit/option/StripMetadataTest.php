@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\StripMetadata;
 
-describe('StripMetadata', function () {
-	it('handles basic option', function () {
+describe('StripMetadata', function (): void {
+	it('handles basic option', function (): void {
 		$value = true;
 		$parameter = '1';
 

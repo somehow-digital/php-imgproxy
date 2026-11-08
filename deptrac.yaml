@@ -1,0 +1,65 @@
+# The library's layers and which of them each may depend on.
+#
+# `deptrac debug:unassigned` fails for classes outside any layer.
+
+parameters:
+  library: 'SomehowDigital\\ImgProxy'
+
+deptrac:
+  paths:
+    - ./src
+
+  analyser:
+    types:
+      - class
+      - class_superglobal
+      - function
+      - function_call
+      - function_superglobal
+      - use
+
+  layers:
+    - name: Url
+      collectors:
+        - type: classNameRegex
+          value: '#^%library%\\Url$#'
+
+    # The contract the utilities and the URL accept, kept apart so the options can use the utilities.
+    - name: Contract
+      collectors:
+        - type: classNameRegex
+          value: '#^%library%\\Option\\OptionInterface$#'
+
+    - name: Option
+      collectors:
+        - type: bool
+          must:
+            - type: classNameRegex
+              value: '#^%library%\\Option\\#'
+          must_not:
+            - type: classNameRegex
+              value: '#^%library%\\Option\\OptionInterface$#'
+
+    - name: Masker
+      collectors:
+        - type: classNameRegex
+          value: '#^%library%\\Masker\\#'
+
+    - name: Signer
+      collectors:
+        - type: classNameRegex
+          value: '#^%library%\\Signer\\#'
+
+    - name: Utility
+      collectors:
+        - type: classNameRegex
+          value: '#^%library%\\Utility\\#'
+
+  ruleset:
+    # Composes the options with the masker and the signer.
+    Url: [Contract, Option, Masker, Signer, Utility]
+    Option: [Contract, Utility]
+    Masker: [Utility]
+    Signer: [Utility]
+    Utility: [Contract]
+    Contract: ~

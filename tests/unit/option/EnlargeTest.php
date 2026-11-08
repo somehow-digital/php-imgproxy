@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Enlarge;
 
-describe('Enlarge', function () {
-	it('handles basic option', function () {
+describe('Enlarge', function (): void {
+	it('handles basic option', function (): void {
 		$value = true;
 		$parameter = '1';
 

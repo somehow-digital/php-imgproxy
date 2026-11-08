@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Contrast;
 
-describe('Contrast', function () {
-	it('handles basic option', function () {
+describe('Contrast', function (): void {
+	it('handles basic option', function (): void {
 		$value = 2.0;
 		$parameter = '2';
 

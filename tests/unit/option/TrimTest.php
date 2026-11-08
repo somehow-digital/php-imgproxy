@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Trim;
 
-describe('Trim', function () {
-	it('handles basic option', function () {
+describe('Trim', function (): void {
+	it('handles basic option', function (): void {
 		$value = 1.0;
 		$parameter = '1';
 
@@ -17,7 +17,7 @@ describe('Trim', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles color option', function () {
+	it('handles color option', function (): void {
 		$values = [0.5, 'ff0000'];
 		$parameters = ['0.5', 'ff0000'];
 
@@ -29,7 +29,7 @@ describe('Trim', function () {
 		expect($option->getParameters())->toBe($parameters);
 	});
 
-	it('handles advanced options', function () {
+	it('handles advanced options', function (): void {
 		$values = [0.5, 'ff0000', true, true];
 		$parameters = ['0.5', 'ff0000', '1', '1'];
 

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\Quality;
 
-describe('Quality', function () {
-	it('handles basic option', function () {
+describe('Quality', function (): void {
+	it('handles basic option', function (): void {
 		$value = 75;
 		$parameter = '75';
 

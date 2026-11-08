@@ -5,8 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\ResizingAlgorithm;
 use SomehowDigital\ImgProxy\Option\ResizingAlgorithmEnum;
 
-describe('ResizingAlgorithm', function () {
-	it('handles enum value', function () {
+describe('ResizingAlgorithm', function (): void {
+	it('handles enum value', function (): void {
 		$value = ResizingAlgorithmEnum::CUBIC;
 		$parameter = $value->value;
 
@@ -18,7 +18,7 @@ describe('ResizingAlgorithm', function () {
 		expect($option->getParameters())->toBe([$parameter]);
 	});
 
-	it('handles string value', function () {
+	it('handles string value', function (): void {
 		$value = ResizingAlgorithmEnum::CUBIC;
 		$parameter = $value->value;
 

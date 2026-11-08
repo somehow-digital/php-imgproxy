@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\WatermarkRotate;
 
-describe('WatermarkRotate', function () {
-	it('handles basic option', function () {
+describe('WatermarkRotate', function (): void {
+	it('handles basic option', function (): void {
 		$value = 90.0;
 		$parameter = '90';
 

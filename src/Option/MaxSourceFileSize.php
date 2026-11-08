@@ -6,7 +6,8 @@ namespace SomehowDigital\ImgProxy\Option;
 
 use InvalidArgumentException;
 
-class MaxSourceFileSize extends OptionAbstract {
+class MaxSourceFileSize extends OptionAbstract
+{
 	protected const NAME = 'max_src_file_size';
 	protected const ALIAS = 'msfs';
 

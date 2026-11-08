@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\MaxBytes;
 
-describe('MaxBytes', function () {
-	it('handles basic option', function () {
+describe('MaxBytes', function (): void {
+	it('handles basic option', function (): void {
 		$value = 1024;
 		$parameter = '1024';
 

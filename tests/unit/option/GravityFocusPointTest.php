@@ -5,8 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\GravityEnum;
 use SomehowDigital\ImgProxy\Option\GravityFocusPoint;
 
-describe('GravityFocusPoint', function () {
-	it('handles basic option', function () {
+describe('GravityFocusPoint', function (): void {
+	it('handles basic option', function (): void {
 		$values = [GravityEnum::FOCUS_POINT, 0.563, 0.122];
 		$parameters = ['fp', '0.563', '0.122'];
 

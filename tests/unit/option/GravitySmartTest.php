@@ -5,8 +5,8 @@ declare(strict_types=1);
 use SomehowDigital\ImgProxy\Option\GravityEnum;
 use SomehowDigital\ImgProxy\Option\GravitySmart;
 
-describe('GravitySmart', function () {
-	it('handles basic option', function () {
+describe('GravitySmart', function (): void {
+	it('handles basic option', function (): void {
 		$value = GravityEnum::SMART;
 		$parameter = 'sm';
 

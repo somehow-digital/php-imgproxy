@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 use SomehowDigital\ImgProxy\Option\AutoRotate;
 
-describe('AutoRotate', function () {
-	it('handles basic option', function () {
+describe('AutoRotate', function (): void {
+	it('handles basic option', function (): void {
 		$value = true;
 		$parameter = '1';
 

@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace SomehowDigital\ImgProxy\Option;
 
-class MaxBytes extends OptionAbstract {
+class MaxBytes extends OptionAbstract
+{
 	protected const NAME = 'max_bytes';
 	protected const ALIAS = 'mb';
 
