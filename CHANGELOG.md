@@ -17,6 +17,10 @@
 - `Url` leaves out empty parts of a path by comparing strictly, so a source of `0` is no longer dropped.
 - The code follows PER-CS.
 
+### Fixed
+
+- `HashsumTypeEnum::SHA256` replaces the misspelled `HashsumTypeEnum::SHA2566`, which remains as a deprecated alias.
+
 ## [1.0.0] - 2026-02-20
 
 ### Added
