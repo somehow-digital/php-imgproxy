@@ -25,6 +25,7 @@
 - `Crop` accepts relative sizes (below 1) by taking its width and height as floats.
 - Skipped optional arguments no longer shift the following arguments of an option, e.g. `Resize` without a type or `Trim` without a color. Only trailing empty arguments are left out.
 - `Rotate` rejects negative angles, which imgproxy answers with a server error.
+- `FormatEnum::JPEG` allows building a URL with the `jpeg` extension, which imgproxy accepts.
 - `Url` signs the path including its leading slash, as imgproxy expects.
 
 ## [1.0.0] - 2026-02-20

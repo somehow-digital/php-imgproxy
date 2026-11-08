@@ -39,6 +39,7 @@ describe('Url fallbacks', function (): void {
 		$url = (new Url($masker, $signer))->source('a b');
 
 		expect($url->build(FormatEnum::PNG))->toBe('_/a%20b@png');
+		expect($url->build('jpeg'))->toBe('_/a%20b@jpeg');
 	});
 
 	it('leaves out the empty path prefix of a masker', function (): void {

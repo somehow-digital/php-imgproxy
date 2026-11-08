@@ -8,6 +8,7 @@ enum FormatEnum: string
 {
 	case PNG = 'png';
 	case JPG = 'jpg';
+	case JPEG = 'jpeg';
 	case JXL = 'jxl';
 	case WEBP = 'webp';
 	case AVIF = 'avif';
