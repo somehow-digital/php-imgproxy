@@ -17,6 +17,10 @@
 - `Url` leaves out empty parts of a path by comparing strictly, so a source of `0` is no longer dropped.
 - The code follows PER-CS.
 
+### Fixed
+
+- `Extend` and `ExtendAspectRatio` reject smart and object gravities, which imgproxy does not support there.
+
 ## [1.0.0] - 2026-02-20
 
 ### Added
