@@ -5,6 +5,7 @@
 ### Added
 
 - The options `flip`, `filename`, `format_quality`, `max_result_dimension`, `crop_aspect_ratio`, `unsharp_masking`, `blur_areas`, `blur_detections`, `draw_detections`, `colorize`, `gradient`, `color_profile`, `autoquality`, `jpeg_options`, `png_options`, `webp_options` and `avif_options`, as `Flip`, `Filename`, `FormatQuality`, `MaxResultDimension`, `CropAspectRatio`, `UnsharpMasking`, `BlurAreas`, `BlurDetections`, `DrawDetections`, `Colorize`, `Gradient`, `ColorProfile`, `AutoQuality`, `JpegOptions`, `PngOptions`, `WebpOptions` and `AvifOptions`.
+- The option `preserve_hdr`, as `PreserveHdr`, introduced in imgproxy 4.0.
 - A license file.
 - A security workflow.
 - Quality tooling: coding standard, refactoring, static analysis, architecture, dependency, coverage and mutation checks, run by the `check` Composer script.
