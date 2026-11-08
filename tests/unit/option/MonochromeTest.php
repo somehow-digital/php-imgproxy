@@ -16,4 +16,10 @@ describe('Monochrome', function (): void {
 		expect($option->getValues())->toBe($values);
 		expect($option->getParameters())->toBe($parameters);
 	});
+
+	it('drops trailing empty arguments', function (): void {
+		$option = new Monochrome(0.5, '');
+
+		expect($option->getParameters())->toBe(['0.5']);
+	});
 });

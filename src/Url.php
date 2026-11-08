@@ -58,7 +58,7 @@ class Url
 		$format = is_string($format) ? FormatEnum::from($format) : $format;
 
 		$path = $this->buildPath($this->source ?? '', $format);
-		$signature = $this->signer?->sign($path);
+		$signature = $this->signer?->sign(self::PATH_SEPARATOR . $path);
 		$signature = $signature === null || $signature === '' ? self::SIGNATURE_PLACEHOLDER : $signature;
 
 		return implode(self::PATH_SEPARATOR, [

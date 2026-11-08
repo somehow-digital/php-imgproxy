@@ -10,8 +10,8 @@ class Crop extends OptionAbstract
 	protected const ALIAS = 'c';
 
 	public function __construct(
-		int $width,
-		int $height,
+		float $width,
+		float $height,
 		?Gravity $gravity = null,
 	) {
 		$this->setValues([$width, $height, $gravity]);

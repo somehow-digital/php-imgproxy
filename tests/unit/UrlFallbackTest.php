@@ -53,16 +53,14 @@ describe('Url fallbacks', function (): void {
 		expect($url->build())->toBe('_/raw:1/plain/a');
 	});
 
-	it('filters empty option values', function (): void {
+	it('trims trailing empty option values', function (): void {
 		$option = new class() extends OptionAbstract {
 			public function __construct()
 			{
-				$this->setValues(['', null, 'a']);
+				$this->setValues(['', 'a', null, '']);
 			}
 		};
 
-		expect($option->getValues())->toBe([
-			2 => 'a',
-		]);
+		expect($option->getValues())->toBe(['', 'a']);
 	});
 });
