@@ -19,6 +19,7 @@
 
 ### Fixed
 
+- Skipped optional arguments no longer shift the following arguments of an option, e.g. `Resize` without a type or `Trim` without a color. Only trailing empty arguments are left out.
 - `Url` signs the path including its leading slash, as imgproxy expects.
 
 ## [1.0.0] - 2026-02-20
