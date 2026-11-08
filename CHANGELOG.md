@@ -18,6 +18,14 @@
 - `Url` leaves out empty parts of a path by comparing strictly, so a source of `0` is no longer dropped.
 - The code follows PER-CS.
 
+### Fixed
+
+- `Extend` and `ExtendAspectRatio` reject smart and object gravities, which imgproxy does not support there.
+- `HashsumTypeEnum::SHA256` replaces the misspelled `HashsumTypeEnum::SHA2566`, which remains as a deprecated alias.
+- `Crop` accepts relative sizes (below 1) by taking its width and height as floats.
+- Skipped optional arguments no longer shift the following arguments of an option, e.g. `Resize` without a type or `Trim` without a color. Only trailing empty arguments are left out.
+- `Url` signs the path including its leading slash, as imgproxy expects.
+
 ## [1.0.0] - 2026-02-20
 
 ### Added
