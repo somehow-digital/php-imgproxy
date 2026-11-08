@@ -10,6 +10,7 @@
 - Quality tooling: coding standard, refactoring, static analysis, architecture, dependency, coverage and mutation checks, run by the `check` Composer script.
 - Checks and tests workflows, and zizmor in the security workflow.
 - `Utility\Hex`, which decodes hexadecimal keys.
+- The option `crop_objects`, as `CropObjects`, introduced in imgproxy 4.0.
 
 ### Changed
 
