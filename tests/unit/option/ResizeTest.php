@@ -35,4 +35,10 @@ describe('Resize', function (): void {
 		expect($option->getValues())->toBe($values);
 		expect($option->getParameters())->toBe($parameters);
 	});
+
+	it('keeps skipped arguments in place', function (): void {
+		$option = new Resize(null, new Width(100));
+
+		expect($option->getParameters())->toBe(['', '100']);
+	});
 });
