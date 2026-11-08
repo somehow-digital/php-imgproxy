@@ -41,4 +41,10 @@ describe('Gravity', function (): void {
 		expect($option->getValues())->toBe($values);
 		expect($option->getParameters())->toBe($parameters);
 	});
+
+	it('keeps skipped arguments in place', function (): void {
+		$option = new Gravity(GravityEnum::CENTER, null, 5.0);
+
+		expect($option->getParameters())->toBe(['ce', '', '5']);
+	});
 });

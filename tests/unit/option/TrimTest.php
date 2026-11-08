@@ -40,4 +40,10 @@ describe('Trim', function (): void {
 		expect($option->getValues())->toBe($values);
 		expect($option->getParameters())->toBe($parameters);
 	});
+
+	it('keeps skipped arguments in place', function (): void {
+		$option = new Trim(0.5, null, true);
+
+		expect($option->getParameters())->toBe(['0.5', '', '1']);
+	});
 });

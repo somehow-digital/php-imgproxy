@@ -17,6 +17,10 @@
 - `Url` leaves out empty parts of a path by comparing strictly, so a source of `0` is no longer dropped.
 - The code follows PER-CS.
 
+### Fixed
+
+- Skipped optional arguments no longer shift the following arguments of an option, e.g. `Resize` without a type or `Trim` without a color. Only trailing empty arguments are left out.
+
 ## [1.0.0] - 2026-02-20
 
 ### Added
