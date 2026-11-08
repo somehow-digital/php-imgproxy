@@ -17,6 +17,10 @@
 - `Url` leaves out empty parts of a path by comparing strictly, so a source of `0` is no longer dropped.
 - The code follows PER-CS.
 
+### Fixed
+
+- `Crop` accepts relative sizes (below 1) by taking its width and height as floats.
+
 ## [1.0.0] - 2026-02-20
 
 ### Added
