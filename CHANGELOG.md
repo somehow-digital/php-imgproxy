@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-11-09
+
 ### Added
 
 - The options `flip`, `filename`, `format_quality`, `max_result_dimension`, `crop_aspect_ratio`, `unsharp_masking`, `blur_areas`, `blur_detections`, `draw_detections`, `colorize`, `gradient`, `color_profile`, `autoquality`, `jpeg_options`, `png_options`, `webp_options` and `avif_options`, as `Flip`, `Filename`, `FormatQuality`, `MaxResultDimension`, `CropAspectRatio`, `UnsharpMasking`, `BlurAreas`, `BlurDetections`, `DrawDetections`, `Colorize`, `Gradient`, `ColorProfile`, `AutoQuality`, `JpegOptions`, `PngOptions`, `WebpOptions` and `AvifOptions`.
@@ -42,5 +44,6 @@
 
 - The path prefix of the encoding masker.
 
-[Unreleased]: https://github.com/somehow-digital/php-imgproxy/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/somehow-digital/php-imgproxy/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/somehow-digital/php-imgproxy/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/somehow-digital/php-imgproxy/releases/tag/v1.0.0
