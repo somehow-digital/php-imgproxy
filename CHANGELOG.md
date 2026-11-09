@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- `Format::supports` ignores the case of the extension.
+
 ## [1.1.0] - 2026-11-09
 
 ### Added
