@@ -11,3 +11,4 @@ composer.lock
 .env
 *.tsbuildinfo
 /docs/.wrangler/
+/docs/.void-wrangler.jsonc
