@@ -2,3 +2,13 @@
 /.phpunit.cache/
 /.deptrac.cache
 composer.lock
+/.vite-hooks/_/
+/node_modules/
+/docs/node_modules/
+/docs/dist/
+/docs/.astro/
+/docs/.void/
+.env
+*.tsbuildinfo
+/docs/.wrangler/
+/docs/.void-wrangler.jsonc

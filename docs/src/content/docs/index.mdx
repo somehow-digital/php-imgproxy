@@ -1,0 +1,50 @@
+---
+title: A type-safe URL builder for imgproxy
+description: A type-safe, immutable and composable URL builder for imgproxy.
+template: splash
+hero:
+  title: imgproxy for PHP
+  tagline: Build imgproxy URLs in a type-safe, immutable and composable way.
+  actions:
+    - text: Get started
+      link: /guide/getting-started/
+      icon: right-arrow
+    - text: Browse the options
+      link: /api/options/
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+```bash
+composer require somehow-digital/imgproxy
+```
+
+```php
+use SomehowDigital\ImgProxy\Option\Height;
+use SomehowDigital\ImgProxy\Option\Quality;
+use SomehowDigital\ImgProxy\Option\Width;
+use SomehowDigital\ImgProxy\Url;
+
+$url = Url::create()
+    ->source('https://example.com/image.jpg')
+    ->options(new Width(300), new Height(200), new Quality(80));
+
+$url->build('webp');
+// _/w:300/h:200/q:80/plain/https%3A%2F%2Fexample.com%2Fimage.jpg@webp
+```
+
+<CardGrid stagger>
+	<Card title="Immutable" icon="approve-check">
+		Every method returns a new instance, so a base URL can be shared and extended safely.
+	</Card>
+	<Card title="Complete" icon="puzzle">
+		One documented class for each imgproxy processing option, with chained pipelines.
+	</Card>
+	<Card title="Private and signed" icon="padlock">
+		Encode or encrypt the source URL, and sign URLs with HMAC-SHA256.
+	</Card>
+	<Card title="Pro aware" icon="star">
+		Options that need [imgproxy Pro](/guide/pro/) are marked everywhere.
+	</Card>
+</CardGrid>

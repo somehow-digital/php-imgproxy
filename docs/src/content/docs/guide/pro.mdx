@@ -1,0 +1,27 @@
+---
+title: imgproxy Pro
+description: Which options and values need imgproxy Pro.
+---
+
+import Options from '../../../components/options.astro';
+
+[imgproxy Pro](https://imgproxy.net/#pro) is the paid edition of imgproxy. The library builds the URL for every option, whichever edition you run. What imgproxy does with a Pro option on the open-source edition is up to imgproxy: it may ignore the option or answer with an error. Check the edition before you depend on one.
+
+## How the docs mark Pro
+
+- A **Pro** badge in the sidebar and in the lists marks an option that needs Pro as a whole.
+- **Partly Pro** marks an option that works on both editions, with a value or an argument that needs Pro.
+- Every option page has an *Availability* row.
+
+## Pro values of other options
+
+| Where | Value | Notes |
+| --- | --- | --- |
+| [`Format`](/api/options/output/format/), `Url::build()` | `best` | Lets imgproxy pick the best format. |
+| [`Watermark`](/api/options/watermark/watermark/) | position `ch` | Chessboard pattern. |
+| [`Gravity`](/api/options/cropping/gravity/) | types `obj` and `objw` | Use `GravityObject` and `GravityObjectWeight`. |
+| [`EncryptionMasker`](/api/maskers/) | the whole masker | Encrypted source URLs. |
+
+## Pro options
+
+<Options pro />

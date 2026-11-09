@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+	category?: string;
+	pro?: boolean;
+}
+
+const { category, pro = false } = Astro.props;
+
+const order = ['Sizing', 'Cropping', 'Effects', 'Output', 'Source', 'Watermark', 'Delivery'];
+
+const entries = (await getCollection('docs', ({ data }) => data.option !== undefined))
+	.filter(({ data }) => category === undefined || data.option?.category === category)
+	.filter(({ data }) => !pro || data.option?.pro !== false)
+	.sort((a, b) => {
+		const left = a.data.option!;
+		const right = b.data.option!;
+
+		return order.indexOf(left.category) - order.indexOf(right.category) || left.class.localeCompare(right.class);
+	});
+
+const groups = order
+	.map(name => ({ entries: entries.filter(({ data }) => data.option?.category === name), name }))
+	.filter(({ entries }) => entries.length > 0);
+---
+
+{
+	groups.map(({ entries, name }) => (
+		<>
+			<h3 id={name.toLowerCase()}>{name}</h3>
+			<table class="options-table">
+				<thead>
+					<tr>
+						<th>Class</th>
+						<th>imgproxy</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					{entries.map(({ data, id }) => (
+						<tr>
+							<td>
+								<a href={`/${id}/`}><code>{data.option?.class}</code></a>
+								{data.option?.pro === true && <> <span class="badge">Pro</span></>}
+								{data.option?.pro === 'partial' && <> <span class="badge badge-partial">Partly Pro</span></>}
+							</td>
+							<td>
+								<code>{data.option?.alias ?? data.option?.name}</code>
+							</td>
+							<td>{data.description}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</>
+	))
+}
+
+<style>
+	@media (max-width: 50rem) {
+		.options-table :is(th, td):nth-child(2) {
+			display: none;
+		}
+	}
+
+	.badge {
+		background: var(--sl-color-accent-low);
+		border-radius: 0.25rem;
+		color: var(--sl-color-text-accent);
+		font-size: var(--sl-text-xs);
+		font-weight: 600;
+		padding: 0.1rem 0.4rem;
+	}
+
+	.badge-partial {
+		background: var(--sl-color-gray-5);
+		color: var(--sl-color-gray-2);
+	}
+</style>

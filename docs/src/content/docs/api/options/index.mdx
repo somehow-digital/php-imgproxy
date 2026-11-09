@@ -1,0 +1,33 @@
+---
+title: Options
+description: Every option class, grouped by what it does.
+---
+
+import Options from '../../../../components/options.astro';
+
+Each [imgproxy processing option](https://docs.imgproxy.net/usage/processing) is a class in the `SomehowDigital\ImgProxy\Option` namespace. Every class has its own page with a usage example, its parameters and notes.
+
+Options marked **Pro** need imgproxy Pro. See [imgproxy Pro](/guide/pro/) for what that means in practice.
+
+## Contract
+
+Every option implements `OptionInterface`:
+
+```php
+interface OptionInterface
+{
+    public function getName(): string;
+
+    public function getAlias(): ?string;
+
+    public function getValues(): array;
+
+    public function getParameters(): array;
+}
+```
+
+`getParameters()` returns the URL parameters as strings: booleans become `1` or `0`, enums their value, and nested options their parameters. The URL uses `getAlias()` when there is one, and `getName()` otherwise. To add your own option, see [Extending](/guide/extending/).
+
+## All options
+
+<Options />
