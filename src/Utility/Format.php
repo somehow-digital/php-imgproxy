@@ -9,7 +9,7 @@ class Format
 	public static function supports(string $extension, bool $pro = false): bool
 	{
 		return in_array(
-			$extension,
+			strtolower($extension),
 			[
 				'png',
 				'jpg',

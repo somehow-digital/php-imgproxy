@@ -33,6 +33,12 @@ describe('Format::supports', function (): void {
 		expect(Format::supports('mp4', true))->toBeTrue();
 	});
 
+	it('ignores the case of the extension', function (): void {
+		expect(Format::supports('PNG'))->toBeTrue();
+		expect(Format::supports('JpEg'))->toBeTrue();
+		expect(Format::supports('PDF', true))->toBeTrue();
+	});
+
 	it('does not support unknown formats', function (): void {
 		expect(Format::supports('unknown'))->toBeFalse();
 	});
