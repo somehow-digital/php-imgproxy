@@ -8,6 +8,10 @@ description: Sources, options and output formats.
 `Url` never changes itself. `source()` and `options()` return a new instance, so a base can be reused.
 
 ```php
+use SomehowDigital\ImgProxy\Url;
+use SomehowDigital\ImgProxy\Option\Height;
+use SomehowDigital\ImgProxy\Option\Width;
+
 $base = Url::create()->source('https://example.com/image.jpg');
 
 $thumbnail = $base->options(new Width(100), new Height(100));
@@ -21,7 +25,10 @@ $banner = $base->options(new Width(1200));
 Each imgproxy [processing option](https://docs.imgproxy.net/usage/processing) is a class in the `SomehowDigital\ImgProxy\Option` namespace. The URL uses the short alias of an option when it has one.
 
 ```php
-$url->options(new Width(100), new Quality(80))->build();
+use SomehowDigital\ImgProxy\Option\Quality;
+use SomehowDigital\ImgProxy\Option\Width;
+
+$base->options(new Width(100), new Quality(80))->build();
 // _/w:100/q:80/plain/https%3A%2F%2Fexample.com%2Fimage.jpg
 ```
 
@@ -35,7 +42,7 @@ use SomehowDigital\ImgProxy\Option\ResizingType;
 use SomehowDigital\ImgProxy\Option\ResizingTypeEnum;
 use SomehowDigital\ImgProxy\Option\Width;
 
-$url->options(
+$base->options(
     new Resize(
         new ResizingType(ResizingTypeEnum::FILL),
         new Width(300),
@@ -55,10 +62,12 @@ See [Options](/guide/options/) for an overview and the [API reference](/api/opti
 Pass the format to `build()` as a `FormatEnum` or a string. The URL gets the extension of that format.
 
 ```php
-$url->options(new Width(100))->build('webp');
+use SomehowDigital\ImgProxy\Option\FormatEnum;
+
+$base->options(new Width(100))->build('webp');
 // _/w:100/plain/https%3A%2F%2Fexample.com%2Fimage.jpg@webp
 
-$url->options(new Width(100))->build(FormatEnum::AVIF);
+$base->options(new Width(100))->build(FormatEnum::AVIF);
 // _/w:100/plain/https%3A%2F%2Fexample.com%2Fimage.jpg@avif
 ```
 

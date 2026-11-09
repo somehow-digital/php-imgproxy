@@ -1,5 +1,5 @@
 ---
-title: Source Masking
+title: Source masking
 description: Hide the source URL by encoding or encrypting it.
 ---
 
@@ -10,7 +10,9 @@ By default the source is URL-encoded and visible in the URL. A masker changes th
 `EncodingMasker` encodes the source as URL-safe Base64.
 
 ```php
+use SomehowDigital\ImgProxy\Url;
 use SomehowDigital\ImgProxy\Masker\EncodingMasker;
+use SomehowDigital\ImgProxy\Option\Width;
 
 $url = Url::create(new EncodingMasker())
     ->source('https://example.com/image.jpg')
@@ -23,6 +25,10 @@ $url->build('png');
 Encoding is not secret: anyone can decode it.
 
 ## Encryption
+
+:::tip[imgproxy Pro]
+Encrypted source URLs are only available in imgproxy Pro.
+:::
 
 `EncryptionMasker` encrypts the source with AES-CBC. It needs the hexadecimal key that is configured in imgproxy as `IMGPROXY_SOURCE_URL_ENCRYPTION_KEY`. The key length selects the cipher: 16 bytes for AES-128, 24 for AES-192 and 32 for AES-256.
 

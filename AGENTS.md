@@ -25,7 +25,8 @@ imgproxy URL builder for PHP (8.2+).
 
 - The docs site lives in `docs/` (Astro Starlight, deployed to Cloudflare with Void) in a pnpm workspace driven by Vite+.
 - Check it with `pnpm lint` and `pnpm build`; auto-fix with `pnpm fix`.
-- When adding or changing an option or enum, update `docs/src/data/options.ts` and `docs/src/content/docs/api/enums.md`.
+- Each option has a page in `docs/src/content/docs/api/options/<group>/`. When adding or changing an option, add or update its page, including the `option` frontmatter and whether it needs imgproxy Pro. The overview and the Pro list are built from that frontmatter.
+- When adding or changing an enum, update `docs/src/content/docs/api/enums.md`.
 - Keep the `docs/` examples in line with the code.
 
 ## Git

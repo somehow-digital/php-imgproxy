@@ -1,11 +1,15 @@
 autoquality
 avifo
 cachebuster
+cmyk
 deringing
+dssim
 exar
 exif
+gabarito
 hashsum
 imgproxy
+iptc
 jpgo
 lanczos
 mafr
@@ -13,9 +17,11 @@ msfs
 noea
 nowe
 objw
+pango
 pngo
 soea
 sowe
+subsampling
 unsharp
 voidzero
 wmsh

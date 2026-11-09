@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Getting started
 description: Install the library and build your first imgproxy URL.
 ---
 
@@ -7,6 +7,10 @@ description: Install the library and build your first imgproxy URL.
 
 - PHP 8.2 or newer
 - The `openssl` extension
+
+## Before you start
+
+You need a running [imgproxy](https://imgproxy.net/) instance to serve the URLs. This library only builds them.
 
 ## Installation
 
@@ -42,6 +46,8 @@ The leading `_` is the placeholder imgproxy accepts when [signing](/guide/signin
 
 ## Next steps
 
+- [How URLs work](/guide/concepts/)
 - [Building URLs](/guide/building-urls/)
+- [Recipes](/recipes/)
 - [Pipelines](/guide/pipelines/)
 - [Source masking](/guide/masking/) and [signing](/guide/signing/)

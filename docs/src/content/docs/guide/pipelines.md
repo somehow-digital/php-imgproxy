@@ -6,6 +6,11 @@ description: Chain multiple processing steps with imgproxy pipelines.
 imgproxy can run several processing steps in sequence, separated by `/-/`. Pass an array of options to `options()` to start a new step.
 
 ```php
+use SomehowDigital\ImgProxy\Url;
+use SomehowDigital\ImgProxy\Option\Crop;
+use SomehowDigital\ImgProxy\Option\Height;
+use SomehowDigital\ImgProxy\Option\Width;
+
 $url = Url::create()
     ->source('https://example.com/image.jpg')
     ->options(

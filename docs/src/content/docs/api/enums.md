@@ -9,7 +9,7 @@ Options accept the value as a string as well as the enum, except `ResizingType`,
 
 ## `FormatEnum`
 
-`png`, `jpg`, `jpeg`, `jxl`, `webp`, `avif`, `gif`, `ico`, `svg`, `heic`, `bmp`, `tiff`, `mp4`, `best`
+`png`, `jpg`, `jpeg`, `jxl`, `webp`, `avif`, `gif`, `ico`, `svg`, `heic`, `bmp`, `tiff`, `mp4`, `best` (Pro)
 
 ## `GravityEnum`
 
@@ -20,8 +20,8 @@ Options accept the value as a string as well as the enum, except `ResizingType`,
 | `CENTER`                                               | `ce`                           |
 | `SMART`                                                | `sm`                           |
 | `FOCUS_POINT`                                          | `fp`                           |
-| `OBJECT`                                               | `obj`                          |
-| `OBJECT_WEIGHT`                                        | `objw`                         |
+| `OBJECT` (Pro)                                         | `obj`                          |
+| `OBJECT_WEIGHT` (Pro)                                  | `objw`                         |
 
 ## `ResizingTypeEnum`
 
@@ -29,16 +29,28 @@ Options accept the value as a string as well as the enum, except `ResizingType`,
 
 ## `ResizingAlgorithmEnum`
 
+:::tip[imgproxy Pro]
+[`ResizingAlgorithm`](/api/options/sizing/resizing-algorithm/) is only available in imgproxy Pro.
+:::
+
 `nearest`, `linear`, `cubic`, `lanczos2`, `lanczos3`
 
 ## `WatermarkPositionEnum`
 
-`no`, `ea`, `so`, `we`, `noea`, `nowe`, `soea`, `sowe`, `ce`, `re`, `ch`
+`no`, `ea`, `so`, `we`, `noea`, `nowe`, `soea`, `sowe`, `ce`, `re`, `ch` (Pro)
 
 ## `ObjectsPositionTypeEnum`
+
+:::tip[imgproxy Pro]
+[`ObjectsPosition`](/api/options/cropping/objects-position/) is only available in imgproxy Pro.
+:::
 
 `no`, `ea`, `so`, `we`, `noea`, `nowe`, `soea`, `sowe`, `ce`, `fp`, `prop`
 
 ## `HashsumTypeEnum`
+
+:::tip[imgproxy Pro]
+[`Hashsum`](/api/options/source/hashsum/) is only available in imgproxy Pro.
+:::
 
 `none`, `md5`, `sha1`, `sha256`, `sha512`

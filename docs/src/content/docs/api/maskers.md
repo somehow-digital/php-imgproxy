@@ -34,6 +34,10 @@ Encodes the source as URL-safe Base64 without padding. No path prefix, `.` as th
 
 ## `EncryptionMasker`
 
+:::tip[imgproxy Pro]
+Encrypted source URLs are only available in imgproxy Pro.
+:::
+
 ```php
 new EncryptionMasker(string $key)
 ```
