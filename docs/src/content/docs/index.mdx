@@ -1,0 +1,35 @@
+---
+title: imgproxy for PHP
+description: A type-safe, immutable and composable URL builder for imgproxy.
+template: splash
+hero:
+  tagline: Build imgproxy URLs in a type-safe, immutable and composable way.
+  actions:
+    - text: Get started
+      link: /guide/getting-started/
+      icon: right-arrow
+    - text: API reference
+      link: /api/url/
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+	<Card title="Immutable" icon="approve-check">
+		Every method returns a new instance, so a base URL can be shared and extended safely.
+	</Card>
+	<Card title="Complete" icon="puzzle">
+		One class for each imgproxy processing option, including chained pipelines.
+	</Card>
+	<Card title="Private" icon="setting">
+		Encode or encrypt the source URL.
+	</Card>
+	<Card title="Signed" icon="rocket">
+		Sign URLs with HMAC-SHA256.
+	</Card>
+</CardGrid>
+
+```bash
+composer require somehow-digital/imgproxy
+```

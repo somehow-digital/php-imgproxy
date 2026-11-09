@@ -1,0 +1,45 @@
+---
+import { categories, options } from '../data/options';
+
+interface Props {
+	category?: string;
+}
+
+const { category } = Astro.props;
+const selected = category === undefined ? categories : [category];
+---
+
+{
+	selected.map(name => (
+		<>
+			<h3 id={name.toLowerCase()}>{name}</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>Class</th>
+						<th>Option</th>
+						<th>Constructor</th>
+						<th>Description</th>
+					</tr>
+				</thead>
+				<tbody>
+					{options
+						.filter(option => option.category === name)
+						.map(option => (
+							<tr>
+								<td><code>{option.class}</code></td>
+								<td>
+									<code>{option.name}</code>
+									{option.alias && <><br /><code>{option.alias}</code></>}
+								</td>
+								<td>
+									<code>({option.parameters.join(', ')})</code>
+								</td>
+								<td>{option.description}</td>
+							</tr>
+						))}
+				</tbody>
+			</table>
+		</>
+	))
+}

@@ -12,6 +12,7 @@
 - Checks and tests workflows, and zizmor in the security workflow.
 - `Utility\Hex`, which decodes hexadecimal keys.
 - The option `crop_objects`, as `CropObjects`, introduced in imgproxy 4.0.
+- A documentation site with a guide and an API reference at https://php-imgproxy.somehow-digital.dev.
 
 ### Changed
 

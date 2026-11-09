@@ -1,0 +1,31 @@
+---
+title: Options
+description: Every option class and its constructor.
+---
+
+import Options from '../../../components/options.astro';
+
+`SomehowDigital\ImgProxy\Option`
+
+Every option implements `OptionInterface`:
+
+```php
+interface OptionInterface
+{
+    public function getName(): string;
+
+    public function getAlias(): ?string;
+
+    public function getValues(): array;
+
+    public function getParameters(): array;
+}
+```
+
+`getParameters()` returns the URL parameters as strings: booleans become `1` or `0`, enums their value, and nested options their parameters. Extend `OptionAbstract` to add an option.
+
+The _Option_ column gives the name and, below it, the alias. The URL uses the alias when there is one.
+
+<Options />
+
+See [Enums](/api/enums/) for the values of enum arguments.

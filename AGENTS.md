@@ -21,6 +21,13 @@ imgproxy URL builder for PHP (8.2+).
 - Auto-fix with `composer ecs-fix`, `composer rector-fix` and `composer composer-normalize-fix`.
 - Never weaken a check to make it pass: no new ignores, baselines, deptrac exceptions or lowered thresholds. Fix the cause.
 
+## Docs
+
+- The docs site lives in `docs/` (Astro Starlight, deployed to Cloudflare with Void) in a pnpm workspace driven by Vite+.
+- Check it with `pnpm lint` and `pnpm build`; auto-fix with `pnpm fix`.
+- When adding or changing an option or enum, update `docs/src/data/options.ts` and `docs/src/content/docs/api/enums.md`.
+- Keep the `docs/` examples in line with the code.
+
 ## Git
 
 - Commit only when asked.
