@@ -2,6 +2,8 @@
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-11-09
+
 ### Fixed
 
 - `Format::supports` ignores the case of the extension.
@@ -48,6 +50,7 @@
 
 - The path prefix of the encoding masker.
 
-[Unreleased]: https://github.com/somehow-digital/php-imgproxy/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/somehow-digital/php-imgproxy/compare/v1.1.1...HEAD
+[1.1.1]: https://github.com/somehow-digital/php-imgproxy/compare/v1.1.0...v1.1.1
 [1.1.0]: https://github.com/somehow-digital/php-imgproxy/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/somehow-digital/php-imgproxy/releases/tag/v1.0.0
