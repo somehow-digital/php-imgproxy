@@ -126,3 +126,7 @@ $url = Url::create(
 )
 ->build(); // oKfUtW34Dvo2BGQe/w:100/h:100/enc/p5VjorNdhs7mRRw8.png
 ```
+
+---
+
+[`somehow.digital`](https://somehow.digital/)
