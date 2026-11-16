@@ -21,6 +21,8 @@ $url->build();
 // pqw5H1GsOHf_2dz4AntYKn20eioydnoxQ8pbkR-0vew/w:100/plain/https%3A%2F%2Fexample.com%2Fimage.jpg
 ```
 
+If `IMGPROXY_SIGNATURE_SIZE` is set, pass the same value as the third argument: `new Signer($key, $salt, 8)`.
+
 The signature replaces the `_` placeholder and covers the full path, including the masked source and the format.
 
 Masking and signing combine:

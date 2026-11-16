@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- `Signer` takes a `size` to truncate the signature, matching `IMGPROXY_SIGNATURE_SIZE`.
+
 ## [1.1.1] - 2026-11-09
 
 ### Fixed
