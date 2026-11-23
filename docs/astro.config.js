@@ -5,7 +5,9 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
 	base: '/',
 	// The default processor leaves the code blocks of Markdown pages without their highlighting styles.
-	markdown: { processor: unified() },
+	markdown: {
+		processor: unified(),
+	},
 	integrations: [
 		starlight({
 			components: {
@@ -65,9 +67,21 @@ export default defineConfig({
 					label: 'Options',
 					items: [
 						{ label: 'Overview', slug: 'api/options' },
-						...['Sizing', 'Cropping', 'Effects', 'Output', 'Source', 'Watermark', 'Delivery'].map(label => ({
+						...[
+							'Sizing',
+							'Cropping',
+							'Effects',
+							'Output',
+							'Source',
+							'Watermark',
+							'Delivery',
+						].map(label => ({
 							collapsed: true,
-							items: [{ autogenerate: { directory: `api/options/${label.toLowerCase()}` } }],
+							items: [
+								{
+									autogenerate: { directory: `api/options/${label.toLowerCase()}` },
+								},
+							],
 							label,
 						})),
 					],

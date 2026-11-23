@@ -8,7 +8,15 @@ interface Props {
 
 const { category, pro = false } = Astro.props;
 
-const order = ['Sizing', 'Cropping', 'Effects', 'Output', 'Source', 'Watermark', 'Delivery'];
+const order = [
+	'Sizing',
+	'Cropping',
+	'Effects',
+	'Output',
+	'Source',
+	'Watermark',
+	'Delivery',
+];
 
 const entries = (await getCollection('docs', ({ data }) => data.option !== undefined))
 	.filter(({ data }) => category === undefined || data.option?.category === category)
@@ -21,7 +29,10 @@ const entries = (await getCollection('docs', ({ data }) => data.option !== undef
 	});
 
 const groups = order
-	.map(name => ({ entries: entries.filter(({ data }) => data.option?.category === name), name }))
+	.map(name => ({
+		entries: entries.filter(({ data }) => data.option?.category === name),
+		name,
+	}))
 	.filter(({ entries }) => entries.length > 0);
 ---
 
