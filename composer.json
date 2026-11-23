@@ -54,7 +54,7 @@
 		},
 		"optimize-autoloader": true,
 		"platform": {
-			"php": "8.2.35"
+			"php": "8.2.36"
 		},
 		"sort-packages": true
 	},
