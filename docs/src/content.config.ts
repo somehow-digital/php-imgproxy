@@ -13,7 +13,10 @@ export const collections = {
 						category: z.string(),
 						class: z.string(),
 						name: z.string(),
-						pro: z.union([z.boolean(), z.literal('partial')]),
+						pro: z.union([
+							z.boolean(),
+							z.literal('partial'),
+						]),
 					})
 					.optional(),
 			}),
